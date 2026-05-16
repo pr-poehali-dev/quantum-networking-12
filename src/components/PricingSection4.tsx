@@ -8,20 +8,20 @@ import { Tooltip, TooltipContent, TooltipTrigger, TooltipProvider } from "@/comp
 const pricingData = {
   plans: [
     {
-      name: "Старт",
-      description: "Для начинающих и небольших команд.",
+      name: "Базовый",
+      description: "Для тех, кто только знакомится с миром ароматов.",
       features: [
         {
-          name: "Базовое управление задачами",
-          tooltip: "Основные функции для начала работы",
+          name: "Доступ к каталогу",
+          tooltip: "Полный каталог с тысячами ароматов",
         },
         {
-          name: "1 автоматизация на процесс",
-          tooltip: "Автоматизируйте одну задачу в каждом процессе",
+          name: "Бесплатная доставка от 3 000 ₽",
+          tooltip: "Доставка курьером при заказе от 3 000 рублей",
         },
         {
-          name: "5 ГБ хранилище",
-          tooltip: "Безопасное хранение файлов и документов",
+          name: "1 пробник в подарок",
+          tooltip: "Один пробник на выбор к каждому заказу",
         },
       ],
       pricing: {
@@ -31,57 +31,57 @@ const pricingData = {
       variant: "secondary",
     },
     {
-      name: "Про",
-      description: "Для растущих команд, готовых масштабироваться.",
+      name: "Клуб",
+      description: "Для ценителей с привилегиями постоянного покупателя.",
       badge: "Популярный",
       features: [
         {
-          name: "Неограниченные доски",
-          tooltip: "Создавайте столько досок, сколько нужно",
+          name: "Бесплатная доставка на все заказы",
+          tooltip: "Курьерская доставка без минимальной суммы заказа",
         },
         {
-          name: "Продвинутая автоматизация",
-          tooltip: "Мощные возможности для сложных процессов",
+          name: "Скидка 10% на все покупки",
+          tooltip: "Постоянная скидка на весь ассортимент",
         },
         {
-          name: "50 ГБ хранилище",
-          tooltip: "Расширенное хранилище для растущих команд",
+          name: "3 пробника в подарок",
+          tooltip: "Три пробника на выбор к каждому заказу",
         },
         {
-          name: "Интеграции",
-          tooltip: "Подключение любимых инструментов",
+          name: "Ранний доступ к новинкам",
+          tooltip: "Первыми узнавайте о новых поступлениях",
         },
       ],
       pricing: {
-        monthly: 2900,
-        annually: 29000,
+        monthly: 490,
+        annually: 4900,
       },
       variant: "default",
     },
     {
-      name: "Бизнес",
-      description: "Для крупных организаций с особыми потребностями.",
+      name: "Премиум",
+      description: "Для истинных ценителей роскошной парфюмерии.",
       features: [
         {
-          name: "Персональная поддержка",
-          tooltip: "Приоритетная поддержка с персональным менеджером",
+          name: "Персональный консультант",
+          tooltip: "Личный эксперт-парфюмер только для вас",
         },
         {
-          name: "Кастомные процессы",
-          tooltip: "Создавайте процессы под ваши задачи",
+          name: "Скидка 20% на все покупки",
+          tooltip: "Максимальная скидка на весь ассортимент",
         },
         {
-          name: "150 ГБ хранилище",
-          tooltip: "Корпоративное хранилище данных",
+          name: "5 пробников в подарок",
+          tooltip: "Пять пробников на выбор к каждому заказу",
         },
         {
-          name: "Расширенная безопасность",
-          tooltip: "Продвинутые функции защиты и контроля",
+          name: "Приоритетная доставка за 1 день",
+          tooltip: "Гарантированная доставка на следующий день",
         },
       ],
       pricing: {
-        monthly: 12900,
-        annually: 129000,
+        monthly: 990,
+        annually: 9900,
       },
       variant: "secondary",
     },
@@ -96,11 +96,11 @@ export function PricingSection4() {
       <div className="container mx-auto px-6">
         <div className="flex flex-col items-center gap-8">
           <div className="flex flex-col items-center gap-4 md:gap-5 max-w-xl text-center">
-            <p className="text-base font-semibold text-muted-foreground">Тарифы</p>
+            <p className="text-base font-semibold text-muted-foreground">Подписка</p>
             <h2 id="pricing-section-title-4" className="text-3xl md:text-4xl font-bold">
-              Простые и понятные цены
+              Выгодная подписка для постоянных покупателей
             </h2>
-            <p className="text-base text-muted-foreground">Выберите план, который подходит вашей команде.</p>
+            <p className="text-base text-muted-foreground">Выберите план и экономьте на каждой покупке.</p>
           </div>
 
           <Tabs value={billingPeriod} onValueChange={setBillingPeriod} className="w-fit">
@@ -136,18 +136,18 @@ export function PricingSection4() {
                       {billingPeriod === "monthly" ? plan.pricing.monthly : plan.pricing.annually}
                     </span>
                     <span className={`text-base leading-6 ${index === 2 ? "opacity-70" : "text-muted-foreground"}`}>
-                      {plan.pricing.monthly === 0 ? "" : ` р/${billingPeriod === "monthly" ? "мес" : "год"}`}
+                      {plan.pricing.monthly === 0 ? "" : ` ₽/${billingPeriod === "monthly" ? "мес" : "год"}`}
                     </span>
                   </div>
 
                   <Button variant={index === 2 ? "secondary" : "default"} className="w-full">
-                    {plan.pricing.monthly === 0 ? "Начать бесплатно" : "Выбрать"}
+                    {plan.pricing.monthly === 0 ? "Начать без подписки" : "Подключить"}
                   </Button>
                 </div>
 
                 <div className="space-y-4">
                   <p className="text-sm font-medium">
-                    {index === 0 ? "Что включено:" : `Все из ${pricingData.plans[index - 1].name}, плюс:`}
+                    {index === 0 ? "Что включено:" : `Всё из «${pricingData.plans[index - 1].name}», плюс:`}
                   </p>
                   <div className="flex flex-col gap-4">
                     {plan.features.map((feature, i) => (

@@ -19,16 +19,16 @@ export function Footer2() {
                 aria-label="Навигация в подвале"
               >
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Главная
+                  Каталог
                 </a>
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  О нас
+                  О магазине
+                </a>
+                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+                  Доставка
                 </a>
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                   Контакты
-                </a>
-                <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Поддержка
                 </a>
                 <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                   Вопросы
@@ -50,7 +50,7 @@ export function Footer2() {
                 aria-label="Введите email для подписки"
               />
               <Button type="submit" className="w-full md:w-auto" aria-label="Подписаться на рассылку">
-                Подписаться
+                Узнавать о новинках
               </Button>
             </form>
           </div>
@@ -59,7 +59,7 @@ export function Footer2() {
 
           <div className="flex flex-col lg:flex-row justify-between items-center gap-12 text-center">
             <p className="text-muted-foreground order-2 md:order-1">
-              2025 СмартФлоу. Все права защищены.
+              2025 Аромат. Все права защищены.
             </p>
 
             <nav
